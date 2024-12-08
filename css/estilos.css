@@ -1,0 +1,91 @@
+/* Estilos generales *//*Escribe aquí tu CSS - Fdo LuisGG*/
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body,html{height:100%}
+body {
+    
+    background-color: #666;
+    font-family:Arial /* 'Press Start 2P', sans-serif; */;
+    font-size: 10px;
+    overflow: hidden;
+    
+}
+#panta{background-color: #000;
+    position:absolute ;top:50%;left:50%;transform: translate(-50% , -50%);
+    overflow: hidden;
+}
+#intro {
+    color: #0f0;
+    line-height: 2em;
+    font-size: 12px;line-height: 1;
+    text-align: center;
+    width: 90%;
+    padding: 5%;
+    position: absolute;
+    top: 40px;
+    right: 0px;
+}
+button {
+    color: #ff0;
+    font-family: 'Press Start 2P', sans-serif;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+}
+
+button:hover {
+    cursor: pointer;
+
+}
+
+  #salida{
+  position:absolute;top:20px;right:20px; color:#fff;z-index: 2;
+        
+  }
+.alien{
+    position:absolute;
+    width:27px;height:26px;color:#fff
+    }
+
+
+.alien-destruido{
+    fill:#f0f;
+    position:absolute;
+    width:27px;height:26px;
+    transition: opacity 1000ms ease-out, transform 1000ms ease-out;
+
+}
+.alien .cabeza{
+    position: absolute;
+    top:0;left:3px;
+
+}
+.alien .manos{
+ /*    fill:cyan; */
+    position: absolute;
+    bottom:0;left:0;
+    
+}
+.alien-destruido rect{
+    fill:#fff;
+    transition: transform 1000ms ease-out;
+    position:absolute;
+}
+
+#boton{
+    position:absolute;top:10px; right:10px;
+}
+
+strong{
+    position:absolute;top:50%;left: 50%;transform: translate(-50%,-50%);
+    color:red; font-size:50px; font-weight:bold;
+}
+
+#nave{
+    position:absolute;bottom:10px; left:100px; z-index:2
+}
+
+.disparo{
+    position:absolute;bottom:10px; 
+    color:#78fc2c;z-index:1;width:1px;
+}
