@@ -1,30 +1,63 @@
-/* Estilos generales *//*Escribe aquí tu CSS - Fdo LuisGG*/
+/* Estilos generales */
+/*Escribe aquí tu CSS - Fdo LuisGG*/
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-body,html{height:100%}
+body,
+html {
+    height: 100%
+}
+
 body {
-    
-    background-color: #666;
-    font-family:Arial /* 'Press Start 2P', sans-serif; */;
+
+    background: url(../img/fondo.jpg);
+    font-family: 'Press Start 2P', sans-serif;
     font-size: 10px;
     overflow: hidden;
-    
+
 }
-#panta{background-color: #000;
-    position:absolute ;top:50%;left:50%;transform: translate(-50% , -50%);
+
+#panta {
+    background-color: #000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     overflow: hidden;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+    background-image: url('../img/cielo.png');
+    z-index: 1;
+    background-size: 30%;
+    width: 100%;
+    height: 100vh;
+    user-select: none;
+}
+#centro {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #ff0000;
+    
+    font-size: 5rem;
+     z-index: 9999;
 }
 #intro {
     color: #0f0;
     line-height: 2em;
-    font-size: 12px;line-height: 1;
+    font-size: 10px;
+    line-height: 2;
     text-align: center;
     width: 90%;
     padding: 5%;
     position: absolute;
+    z-index: 6;
     top: 40px;
     right: 0px;
 }
+
 button {
     color: #ff0;
     font-family: 'Press Start 2P', sans-serif;
@@ -38,54 +71,137 @@ button:hover {
 
 }
 
-  #salida{
-  position:absolute;top:20px;right:20px; color:#fff;z-index: 2;
-        
-  }
-.alien{
-    position:absolute;
-    width:27px;height:26px;color:#fff
+#salida {
+    box-sizing: border-box;
+    width:calc(100% - 10px);
+    position: absolute;
+    bottom:0px;
+    left: 0px;
+    color: #fff;
+    z-index: 9;
+    display: flex;
+    margin: 0 5px;padding:5px 0;
+    border-top:5px dotted #fff
+}
+
+#salida>* {
+    min-width: 100px;margin:0 20px;
+}
+#salida>*>strong {
+    font-size:11px;letter-spacing:4px;font-weight: bold;
+}
+#leyenda-alien{
+    width:20px
+}
+
+#disparos { 
+    color: #0f0;
+ 
+}
+#vidas{
+  display: flex;
     }
+#vidas svg{
+    margin-right:2px;width:20px;
+}
 
+.alien {
+    position: absolute;
+    width: 5vw;
+    max-width: 24px;
+    min-width: 12px;
+    height: auto;
+    color: #fff;
+    z-index: 8;
+    user-select: none;
+    opacity: 0.8;
+}
 
-.alien-destruido{
-    fill:#f0f;
-    position:absolute;
-    width:27px;height:26px;
+.alien.bisho{
+    width: 7vw;
+    max-width: 36px;
+
+}
+
+.alien .core-alien {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+}
+
+.alien-destruido {
+    
+    position: absolute;
+    z-index: 10;
+    width: 27px;
+    height: 26px;
     transition: opacity 1000ms ease-out, transform 1000ms ease-out;
 
 }
-.alien .cabeza{
+
+.alien .cabeza {
     position: absolute;
-    top:0;left:3px;
+    width: 100%;
+    top: 0;
+    left: 3px;
 
 }
-.alien .manos{
- /*    fill:cyan; */
+
+.alien .manos {
     position: absolute;
-    bottom:0;left:0;
-    
+    bottom: 0;
+    left: 0;
+    transform-origin: 50% 50%; /* Define el punto medio */
 }
-.alien-destruido rect{
-    fill:#fff;
+
+.alien.enfadado  rect , .alien.enfadado  path,  .alien.enfadado  polygon{
+    /* fill: #f00 !important; */
+    filter:saturate(3)
+}
+
+.alien-destruido rect {
+    fill: #fff;
     transition: transform 1000ms ease-out;
-    position:absolute;
+    position: absolute;
 }
 
-#boton{
-    position:absolute;top:10px; right:10px;
+#boton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
 
-strong{
-    position:absolute;top:50%;left: 50%;transform: translate(-50%,-50%);
-    color:red; font-size:50px; font-weight:bold;
+
+
+#nave {
+    position: absolute;
+    bottom: 40px;
+    left: 100px;
+    z-index: 5;
+    user-select: none;
+}
+#nave #fuego{
+    position:absolute;bottom:-45px;left:-6px;
+    font-size: 50px;color:orange
+}
+#nave #fuego img{
+    width:40px; transform: rotate(180deg);
+}
+.disparo {
+    position: absolute;
+    bottom: 10px;
+    z-index: 7;
+    color: #7fc;
+    z-index: 1;
+    width: 1px;
 }
 
-#nave{
-    position:absolute;bottom:10px; left:100px; z-index:2
-}
 
-.disparo{
-    position:absolute;bottom:10px; 
-    color:#78fc2c;z-index:1;width:1px;
-}
+/* .estrellas rect{
+    fill:#fff;
+    transform: rotate(45deg);
+} */
