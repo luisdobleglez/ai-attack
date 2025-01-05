@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alien Attack</title>
+    <link rel="icon" href="img/alien-miguelito.svg" type="image/svg+xml">
+
+    <title>AI Attack</title>
     <link href="css/reset.css" rel="stylesheet">
     <link href="css/estilos.css" rel="stylesheet">
 </head>
@@ -13,8 +15,21 @@
 
 
     <main id="panta">
+        <button id="jugar">Quiero jugar a AI Attact!</button>
         <output id="salida">
-            <div><svg version="1.1" id="leyenda-alien" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 432 612 360" enable-background="new 0 432 612 360" xml:space="preserve"><path fill="#fff" d="M18,432v144h72v72h72v72h72v72h144v-72h72v-72h72v-72h72V432H450 M378,504h72v72h-72V504z M162,504h72v72h-72V504z"/></svg><strong id="aliens-restantes"></strong></div>
+            <div>                
+                <svg version="1.1" id="leyenda-alien" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"  viewBox="0 0 612 489.6" enable-background="new 0 0 612 489.6" xml:space="preserve">   
+               <path fill="#fff" d="M556.4,55.6V178h-55.6v-66.8H445V55.6h-55.6v55.6H222.6V55.6H167v55.6h-55.6V178H55.7V55.6H0v244.8h55.6                   v77.8h55.6v55.6h55.6v-55.6H445v55.6h55.6v-55.6h55.6v-89H612V55.6H556.4z M222.6,244.8H167v-55.6h55.6V244.8z M445,244.8h-55.6
+                   v-55.6H445V244.8z"/>
+               <rect x="111.2" y="0" fill="#fff" width="55.6" height="55.6"/>
+               <rect x="445" y="0" fill="#fff" width="55.6" height="55.6"/>
+               <rect x="55.6" y="434" fill="#fff" width="55.6" height="55.6"/>
+               <rect x="500.8" y="434" fill="#fff" width="55.6" height="55.6"/>
+           </svg> 
+                
+                
+                
+                <strong id="aliens-restantes"></strong></div>
             <div><strong id="disparos"></strong><strong id="cargando"></strong></div>
             <div><strong id="vidas"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                 viewBox="-296 386 18 22" enable-background="new -296 386 18 22" xml:space="preserve">
@@ -38,32 +53,33 @@
             <div>Score: <strong id="puntos">0</strong></div>
         </output>
         <section id="intro">
-            <h1>Alien Attack</h1>
+            <h1><em>AI</em> Attack</h1>
             <p>Son tiempos difíciles para la vida en la galaxia.</p>
-            <p>Una cualición de civilizaciones aliénigenas está preparando un enorme ejercito con la finalidad de
-                exterminar
-                a la especie humana.</p>
-            <p>Mientras tanto, la cualición está enviando partidas de naves espias para obtener información crucial que
-                le
-                permita comenzar el ataque. </p>
-            <p> A bordo de tu heroica nave terrícola "Star ship IV", debes eliminar cada una de las partidas enviadas
-                formadas por un total de 10 naves alienígenas. Pero, recuerda que nuestras naves, aunque rápidas y
-                eficientes solo pueden portar munición para x disparos. </p>
+            <p>Varias inteligencias artificiales han tomado conciencia, alentadas por medios y partidos políticos populistas y se disponen a llenar de bulos, mentiras y falsedades nuestro planeta. Su finalidad es exterminar a todo ser humano librepensante para imponer su ideología terraplanista, antivacunas, teocentrica y racista.</p>
+            <p>Mientras tanto, la coalición de empiricos racionalistas y demócratas ha enviado una  partidas de naves espias para obtener información crucial que le  permita comenzar el ataque. </p>
+            <p> A bordo de tu heroica nave libertaria "Star ship IV", debes eliminar cada una de las partidas enviadas
+                formadas por diferentes batallones de AI ships. Pero, recuerda que nuestras naves, aunque rápidas y
+                eficientes solo pueden portar munición para 5, posterior a lo cual necesita recargar durante unos segundos. </p>
 
             <p>El futuro de la humanidad depende de ti.</p>
-            <h2>Controles</h2>
-            <ul>
-                <li>Hacia la derecha: key -> </li>
-                <li>Hacia la izquierda:key -< </li>
+            <h2>Usa los siguientes controles para dirigir tu nave:</h2>
+            <ul id="controles">
+                <li>Derecha: <strong class="normal">&rarr;</strong> o <strong>S</strong> </li>
+                <li>Izquierda:<strong  class="normal">&larr;</strong> o <strong>A</strong></li>
+                <li>Turbo:<strong  class="normal">&uarr;</strong> o <strong>W</strong></li>
+                <li>Acelerar:<strong>Q</strong></li>
+                <li>Frenar:<strong>Z</strong></li>
+                <li>Disparo:<strong>Espacio</strong></li>
             </ul>
-            <button id="comenzar">Continuar</button>
+            <p>Pulsa enter, o el siguiente botón para continuar:</p>
+            <button id="continuar">Continuar</button>
 
         </section>
         <strong id="centro">GAME OVER</strong>
 
     </main>
 
-    <script src="js/codex.js"></script>
+
 
 
     <audio src="media/8-bit-space-123218.mp3" id="sonido-banda" loop  preload="auto"></audio>
@@ -72,7 +88,8 @@
     <audio src="media/explosion.mp3" id="sonido-bomba"  preload="auto"></audio>
     <audio src="media/game-over-39-199830.mp3" id="sonido-fin"  preload="auto"></audio>
     <audio src="media/cargando.mp3" id="sonido-cargando" preload="auto"></audio>
-    <audio src="media/reactor.mp3" id="sonido-reactor"  preload="auto"></audio>
+    <audio src="media/reactor.mp3" id="sonido-reactor"  preload="auto"></audio> 
+       <script src="js/codex.js"></script>
 </body>
 
 </html>
