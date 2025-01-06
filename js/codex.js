@@ -6,6 +6,7 @@ const restantes = document.getElementById('aliens-restantes')
 const disparos = document.getElementById('disparos')
 const cargando = document.getElementById('cargando')
 const puntos = document.getElementById('puntos')
+const score = document.getElementById('score')
 const vidasMonitor = document.getElementById('vidas');
 const continuar = document.getElementById('continuar');
 const jugar = document.getElementById('jugar');
@@ -230,7 +231,7 @@ class Alien {
                 navin.nave.remove();
                 vidasMonitor.innerHTML = '';
 
-
+                score.innerHTML = puntos.innerHTML
                 centro.style.display = 'block';
                 setTimeout(() => { centro.style.opacity = 1; }, 500)
                 let aliensActuales = document.querySelectorAll('.alien')

@@ -41,12 +41,16 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-align: center;
-    color: #ff0000;
+    text-align: center;color:#fff;font-size: 1.5em;
     opacity: 0;
-    font-size: 5rem;
-     z-index: 9999;
-     transition: opacity 0.5s ease;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+#centro strong{
+    display: block;
+    color: #ff0000;
+    font-size: 6em;
 }
 #intro {
     color: #0f0;opacity: 0;transition:opacity 0.5s ease;
