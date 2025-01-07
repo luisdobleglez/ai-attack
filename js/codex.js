@@ -11,6 +11,9 @@ const vidasMonitor = document.getElementById('vidas');
 const continuar = document.getElementById('continuar');
 const jugar = document.getElementById('jugar');
 const sonidoBanda = document.getElementById('sonido-banda');
+const right = document.getElementById('right');
+const left = document.getElementById('left');
+const fire = document.getElementById('fire');
 let pararFuncion = false;
 
 let seguir = false;
@@ -222,6 +225,7 @@ class Alien {
         if (this.colisionDetectada) return;
 
         if (impacto(navin.nave, this.alienDiv)) {
+            document.getElementById('sonido-bomba').play();
             this.colisionDetectada = true; // Marcamos que ya hubo colisión
             navin.vidas--; // Reducimos las vidas
 
@@ -371,8 +375,9 @@ class Aguila {
             }
 
         });
+ 
 
-
+          
         document.addEventListener('keydown', (evento) => {
             const tecla = evento.key.toLowerCase(); // Convertimos la tecla a minúsculas
 
@@ -638,16 +643,31 @@ function cambiarFase() {
         restantes.innerHTML = 15;
     }
     else if (fase === 3) {
-        generador = new AlienGenerator(35);
+        generador = new AlienGenerator(20);
         generador.iniciarGeneracion('malote', 3, 0.7);
         destruidas = generador.obtenerVeces();
-        restantes.innerHTML = 35;
+        restantes.innerHTML = 20;
     }
     else if (fase === 4) {
-        generador = new AlienGenerator(40);
+        generador = new AlienGenerator(25);
         generador.iniciarGeneracion('calamar', 4, 1);
         destruidas = generador.obtenerVeces();
-        restantes.innerHTML = 40;
+        restantes.innerHTML = 25;
+    }
+    else if (fase === 5) {
+        
+      
+        vidasMonitor.innerHTML = '';
+
+        score.innerHTML = puntos.innerHTML;
+        centro.innerHTML +=  '<p style="color:#f80;font-size:1.2em">You have reached the highest level achieved so far. Congratulations!</p>'
+        centro.style.display = 'block';
+        setTimeout(() => { centro.style.opacity = 1; }, 500)
+        let aliensActuales = document.querySelectorAll('.alien')
+        for(let alien of aliensActuales){
+            alien.remove()
+        }
+        pararFuncion = true;
     }
 }
 disparos.innerHTML = `█████`
